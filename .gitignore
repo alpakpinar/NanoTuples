@@ -4,4 +4,9 @@
 .pydevproject
 .settings/
 .DS_Store
-
+*.pyc
+autocrab.log
+crab_projects_mc/
+mc.txt
+mc201*_NANO.py
+data201*_NANO.py
