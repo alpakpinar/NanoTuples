@@ -146,10 +146,22 @@ MC (UL17, MiniAODv1):
 cmsDriver.py mc2017 -n -1 --mc --eventcontent NANOAODSIM --datatier NANOAODSIM --conditions 106X_mc2017_realistic_v8 --step NANO --nThreads 1 --era Run2_2017,run2_nanoAOD_106Xv1 --customise PhysicsTools/NanoTuples/nanoTuples_cff.nanoTuples_customizeMC --filein file:step-1.root --fileout file:nano.root --no_exec
 ```
 
+Alternatively, execute the wrapper shell script under `crab/` directory:
+
+```bash
+./cmsDriver2017MC.sh
+```
+
 Data (UL17, MiniAODv1):
 
 ```bash
 cmsDriver.py data2017 -n -1 --data --eventcontent NANOAOD --datatier NANOAOD --conditions 106X_dataRun2_v32 --step NANO --nThreads 1 --era Run2_2017,run2_nanoAOD_106Xv1 --customise PhysicsTools/NanoTuples/nanoTuples_cff.nanoTuples_customizeData --filein file:step-1.root --fileout file:nano.root --no_exec
+```
+
+Alternatively, execute the wrapper shell script under `crab/` directory:
+
+```bash
+./cmsDriver2017Data.sh
 ```
 
 MC (UL18, MiniAODv1):
@@ -158,18 +170,35 @@ MC (UL18, MiniAODv1):
 cmsDriver.py mc2018 -n -1 --mc --eventcontent NANOAODSIM --datatier NANOAODSIM --conditions 106X_upgrade2018_realistic_v15_L1v1 --step NANO --nThreads 1 --era Run2_2018,run2_nanoAOD_106Xv1 --customise PhysicsTools/NanoTuples/nanoTuples_cff.nanoTuples_customizeMC --filein file:step-1.root --fileout file:nano.root --no_exec
 ```
 
+Alternatively, execute the wrapper shell script under `crab/` directory:
+
+```bash
+./cmsDriver2018MC.sh
+```
+
 Data (UL18, MiniAODv1):
 
 ```bash
 cmsDriver.py data2018abc -n -1 --data --eventcontent NANOAOD --datatier NANOAOD --conditions 106X_dataRun2_v32 --step NANO --nThreads 1 --era Run2_2018,run2_nanoAOD_106Xv1 --customise PhysicsTools/NanoTuples/nanoTuples_cff.nanoTuples_customizeData --filein file:step-1.root --fileout file:nano.root --no_exec
 ```
 
+Alternatively, execute the wrapper shell script under `crab/` directory:
+
+```bash
+./cmsDriver2018Data.sh
+```
 
 **Step 2**: use the `crab.py` script to submit the CRAB jobs:
 
 For MC:
 
 `python crab.py -p mc_NANO.py --site T2_CH_CERN -o /store/user/$USER/outputdir -t NanoTuples-[version] -i mc.txt --num-cores 1 --send-external -s FileBased -n 2 --work-area crab_projects_mc --dryrun`
+
+Alternatively, execute the wrapper shell script under `crab/` directory:
+
+```bash
+./crabSubmitMC.sh
+```
 
 For data:
 
